@@ -22,9 +22,26 @@
           .chat-side__group-message
             first message
 
+      %a{href: 'https://www.google.com'}
+        .chat-side__group
+          .chat-side__group-name
+            test02
+
+          .chat-side__group-message
+            second message
+
 
 .chat-main
   .chat-main__header
+    .chat-main__header--group.clearfix
+      .chat-main__header--group-name
+        test01
+
+      %a.chat-main__header--group-edit-btn{href: 'https://www.google.com'}
+        edit
+
+    .chat-main__header-member
+      Members: seo neko
 
   .chat-main__body
 

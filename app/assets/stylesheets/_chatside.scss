@@ -49,19 +49,22 @@
 
     &-list {
       height: 100%;
-      color: $white;
 
-      .chat-side__group {
+      a {
         text-decoration: none;
-        padding: 20px;
 
-        &-name {
-          font-size: 15px;
-          padding-bottom: 5px;
+        .chat-side__group{
+          padding: 20px;
+          color: $white;
+
+          &-name {
+            font-size: 15px;
+            padding-bottom: 5px;
+          }
+
+          &-message {
+            font-size: 11px
         }
-
-        &-message {
-          font-size: 11px
         }
       }
     }
