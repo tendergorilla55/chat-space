@@ -1,0 +1,43 @@
+.chat-side
+  .notification
+
+  .chat-side__user
+    .chat-side__user-content
+      .chat-side__user-name
+        testtest
+
+      %a.chat-side__user--new-group{href: 'https://www.google.com'}
+        %i.fa.fa-pencil-square-o
+
+      %a.chat-side__user--edit-user{href: 'https://www.google.com'}
+        %i.fa.fa-cog
+
+  .chat-side__groups
+    .chat-side__groups-list
+      =render partial: "chatside-group"
+
+.chat-main
+  .chat-main__header
+    .chat-main__header--group.clearfix
+      .chat-main__header--group-name
+        test01
+
+      %a.chat-main__header--group-edit-btn{href: 'https://www.google.com'}
+        edit
+
+    .chat-main__header-member
+      Members: member01 member02
+
+  .chat-main__body
+    .chat-main__body--messages-list
+      =render partial: "chatmain-message"
+
+  .chat-main__footer
+    .chat-main__footer-form
+      .chat-main__footer-body
+        %input.chat-main__footer-body.message{type: 'text', placeholder: 'type a message', name: 'message[body]'}
+        %label.chat-main__footer-body.chat-file{for: 'message-image'}
+          %input.image{type: 'file', name: 'message[image]'}
+          %i.fa.fa-image
+
+      %input.submit{type: 'submit', name: 'commit', value: 'Send'}
