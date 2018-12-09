@@ -1,7 +1,6 @@
 @import "./reset";
-@import "./variable";
+@import "font-awesome";
+@import "config/variable";
+@import "mixin/clearfix";
 @import "./chatside";
 @import "./chatmain";
-@import "./clearfix";
-@import "font-awesome";
-@import "./mixin";

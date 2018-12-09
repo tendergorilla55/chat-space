@@ -17,28 +17,28 @@
       position: absolute;
       top: 0;
       bottom: 0;
+    }
 
-      .chat-side__user-name {
-        color: $white;
-        font-size: 16px;
-        font-weight: bold;
-        margin: 0 20px;
-        position: relative;
-        display: inline-block;
-      }
+    &-name {
+      color: $white;
+      font-size: 16px;
+      font-weight: bold;
+      margin: 0 20px;
+      position: relative;
+      display: inline-block;
+    }
 
-      .chat-side__user--new-group {
-        color: $white;
-        margin-left: 30%;
-        position: relative;
-        display: inline-block;
-      }
+    &--new-group {
+      color: $white;
+      margin-left: 30%;
+      position: relative;
+      display: inline-block;
+    }
 
-      .chat-side__user--edit-user {
-        color: $white;
-        position: relative;
-        display: inline-block;
-      }
+    &--edit-user {
+      color: $white;
+      position: relative;
+      display: inline-block;
     }
   }
 
