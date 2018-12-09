@@ -14,22 +14,7 @@
 
   .chat-side__groups
     .chat-side__groups-list
-      %a{href: 'https://www.google.com'}
-        .chat-side__group
-          .chat-side__group-name
-            test01
-
-          .chat-side__group-message
-            first message
-
-      %a{href: 'https://www.google.com'}
-        .chat-side__group
-          .chat-side__group-name
-            test02
-
-          .chat-side__group-message
-            second message
-
+      =render partial: "chatside-group"
 
 .chat-main
   .chat-main__header
@@ -41,8 +26,18 @@
         edit
 
     .chat-main__header-member
-      Members: seo neko
+      Members: member01 member02
 
   .chat-main__body
+    .chat-main__body--messages-list
+      =render partial: "chatmain-message"
 
   .chat-main__footer
+    .chat-main__footer-form
+      .chat-main__footer-body
+        %input.chat-main__footer-body.message{type: 'text', placeholder: 'type a message', name: 'message[body]'}
+        %label.chat-main__footer-body.chat-file{for: 'message-image'}
+          %input.image{type: 'file', name: 'message[image]'}
+          %i.fa.fa-image
+
+      %input.submit{type: 'submit', name: 'commit', value: 'Send'}
