@@ -2,5 +2,7 @@
 @import "font-awesome";
 @import "config/variable";
 @import "mixin/clearfix";
-@import "./chatside";
-@import "./chatmain";
+@import "modules/chatside";
+@import "modules/chatmain";
+@import "modules/user";
+@import "modules/flash";
