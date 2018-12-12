@@ -1,0 +1,27 @@
+=render "shared/side-bar"
+
+.chat-main
+  .chat-main__header
+    .chat-main__header--group.clearfix
+      .chat-main__header--group-name
+        test01
+
+      %a.chat-main__header--group-edit-btn{href: 'https://www.google.com'}
+        edit
+
+    .chat-main__header-member
+      Members: member01 member02
+
+  .chat-main__body
+    .chat-main__body--messages-list
+      =render partial: "messages/chatmain-message"
+
+  .chat-main__footer
+    .chat-main__footer-form
+      .chat-main__footer-body
+        %input.chat-main__footer-body.message{type: 'text', placeholder: 'type a message', name: 'message[body]'}
+        %label.chat-main__footer-body.chat-file{for: 'message-image'}
+          %input.image{type: 'file', name: 'message[image]'}
+          %i.fa.fa-image
+
+      %input.submit{type: 'submit', name: 'commit', value: 'Send'}
