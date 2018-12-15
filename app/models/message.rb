@@ -4,6 +4,6 @@ class Message < ApplicationRecord
   belongs_to :user
   belongs_to :group
 
-  validates :body, presences: true, unless: :image?
+  validates :body, presence: true, unless: :image?
 
 end
