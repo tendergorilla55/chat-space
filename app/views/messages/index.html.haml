@@ -19,9 +19,9 @@
   .chat-main__footer
     .chat-main__footer-form
       .chat-main__footer-body
-        %input.chat-main__footer-body.message{type: 'text', placeholder: 'type a message', name: 'message[body]'}
-        %label.chat-main__footer-body.chat-file{for: 'message-image'}
-          %input.image{type: 'file', name: 'message[image]'}
-          %i.fa.fa-image
-
-      %input.submit{type: 'submit', name: 'commit', value: 'Send'}
+        = form_for [@group, @message] do |f|
+          = f.text_field :body, class: 'message', placeholder: 'type a message'
+          = f.label :image, class: 'chat-file' do
+            = fa_icon 'picture-o'
+            = f.file_field :image,class: 'image'
+          = f.submit 'Send', class: 'submit'
