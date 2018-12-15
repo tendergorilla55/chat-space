@@ -1,0 +1,9 @@
+.chat-main__message.clearfix
+  .chat-main__message-name
+    = message.user.name
+  .chat-main__message-time
+    = message.created_at
+  - if message.body.present?
+    %p.chat-main__message-body
+      = message.body
+    = image_tag message.image.url, class: 'chat-main__message-body' if message.image.present?

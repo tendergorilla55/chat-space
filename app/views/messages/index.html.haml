@@ -4,17 +4,18 @@
   .chat-main__header
     .chat-main__header--group.clearfix
       .chat-main__header--group-name
-        test01
+        = @group.name
 
-      %a.chat-main__header--group-edit-btn{href: 'https://www.google.com'}
-        edit
+      = link_to 'edit','edit' ,class: 'chat-main__header--group-edit-btn'
 
     .chat-main__header-member
-      Members: member01 member02
+      Member:
+      - @group.users.each do |user|
+        = user.name
 
   .chat-main__body
     .chat-main__body--messages-list
-      =render partial: "chatmain-message"
+      =render @messages
 
   .chat-main__footer
     .chat-main__footer-form
