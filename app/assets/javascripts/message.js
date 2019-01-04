@@ -17,10 +17,11 @@ $(function(){
                 </div>`
     return html;
   }
-  $('#new_message').on('submit', function(e){
+  $('#send_message').on('submit', function(e){
     e.preventDefault();
-    console.log(this);
+    console.log("送信");
     var formData = new FormData(this);
+    console.log(this);
     var url = $(this).attr('action')
     $.ajax({
       url: url,
@@ -36,7 +37,7 @@ $(function(){
       $('.message').val('')
       $('.chat-main__body--messages-list').animate({scrollTop: $('.chat-main__body--messages-list')[0].scrollHeight}, 'fast')
     })
-    .fale(function(){
+    .fail(function(){
       alert('error');
     })
   })

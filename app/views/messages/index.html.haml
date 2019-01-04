@@ -20,7 +20,7 @@
   .chat-main__footer
     .chat-main__footer-form
       .chat-main__footer-body
-        = form_for [@group, @message] do |f|
+        = form_for [@group, @message], html: {id: 'send_message'} do |f|
           = f.text_field :body, class: 'message', placeholder: 'type a message'
           = f.label :image, class: 'chat-file' do
             = fa_icon 'picture-o'
