@@ -36,7 +36,7 @@ $(function(){
     })
     .done(function(data){
       var html = buildHTML(data);
-      var html = clearBox(html);
+      clearBox(html);
     })
     .fail(function(){
       alert('error');
