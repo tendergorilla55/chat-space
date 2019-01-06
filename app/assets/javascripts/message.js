@@ -15,6 +15,13 @@ $(function(){
                 </div>`
     return html;
   }
+
+  function clearBox(html){
+    $('.chat-main__body--messages-list').append(html)
+    $('.message').val('')
+    $('.chat-main__body').animate({scrollTop: $('.chat-main__body')[0].scrollHeight}, 'fast')
+  }
+
   $('#send_message').on('submit', function(e){
     e.preventDefault();
     var formData = new FormData(this);
@@ -29,9 +36,7 @@ $(function(){
     })
     .done(function(data){
       var html = buildHTML(data);
-      $('.chat-main__body--messages-list').append(html)
-      $('.message').val('')
-      $('.chat-main__body').animate({scrollTop: $('.chat-main__body')[0].scrollHeight}, 'fast')
+      var html = clearBox(html);
     })
     .fail(function(){
       alert('error');
