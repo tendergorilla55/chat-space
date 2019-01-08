@@ -45,11 +45,15 @@ $(function(){
 
   var interval = setInterval(function() {
     if (window.location.href.match(/\/groups\/\d+\/messages/)) {
+      var id = $('.chat-main__message:last').data('messageId');
       $.ajax({
-        url: location.href.json
+        url: location.href.json,
+        type: 'GET',
+        data: id,
+        dataType: 'json'
       })
       .done(function(messages) {
-        var id = $('.chat-main__message').data('messageId');
+        console.log(messages);
         var insertHTML = "";
         messages.forEach(function(message) {
           if (message.id > id) {
