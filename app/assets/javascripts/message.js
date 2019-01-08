@@ -49,16 +49,13 @@ $(function(){
       $.ajax({
         url: location.href.json,
         type: 'GET',
-        data: id,
+        data: {id: id},
         dataType: 'json'
       })
       .done(function(messages) {
-        console.log(messages);
         var insertHTML = "";
         messages.forEach(function(message) {
-          if (message.id > id) {
-            insertHTML += buildHTML(message);
-          }
+          insertHTML += buildHTML(message);
         });
         $('.chat-main__body--messages-list').append(insertHTML);
         $('.chat-main__body').animate({scrollTop: $('.chat-main__body')[0].scrollHeight}, 'fast');
